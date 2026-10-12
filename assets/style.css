@@ -1165,3 +1165,12 @@ form select{-webkit-appearance:none;appearance:none;padding-right:40px;backgroun
 @media (max-width:768px){.cc-v{font-size:16px}}
 .cc select:focus-visible{outline:2px solid var(--g600);outline-offset:2px}
 .tel{grid-template-columns:minmax(0,7.5em) minmax(0,1fr)}
+/* menu mobile: ocupa a altura toda do ecrã; áreas sem espaço quando fechadas */
+@media (max-width:980px){
+  .bar:has(.nav.open){display:grid;grid-template-columns:minmax(0,1fr) auto auto;grid-template-rows:auto minmax(0,1fr);align-items:center;height:calc(100dvh - 24px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+  .bar:has(.nav.open) .nav{grid-column:1/-1;grid-row:2;align-self:stretch;max-height:none;min-height:0;overflow-y:auto}
+  .nav.open .nav-foot{margin-top:auto}
+  .has-mega:not(.open) .mega{padding:0}
+  .has-mega:not(.open) .mega>.mega-in{padding-block:0}
+  .mega>.mega-in{transition:padding .45s var(--ease-out)}
+}
