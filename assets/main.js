@@ -184,6 +184,9 @@
   // Entrada da página
   if(root.classList.contains("pt-in")){
     requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add("pt-reveal");setTimeout(function(){root.classList.add("mo-in")},380);setTimeout(function(){root.classList.remove("pt-in","pt-reveal")},1300)})});
+  }else if(root.classList.contains("intro")){
+    setTimeout(function(){root.classList.add("mo-in")},1750);
+    setTimeout(function(){root.classList.remove("intro")},2700);
   }else{requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add("mo-in")})})}
   // Saída da página (links internos para outra página)
   document.addEventListener("click",function(e){
