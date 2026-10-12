@@ -182,7 +182,9 @@
     }catch(e){}
   }
   // Entrada da página
-  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add("mo-in")})});
+  if(root.classList.contains("pt-in")){
+    requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add("pt-reveal");setTimeout(function(){root.classList.add("mo-in")},380);setTimeout(function(){root.classList.remove("pt-in","pt-reveal")},1300)})});
+  }else{requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add("mo-in")})})}
   // Saída da página (links internos para outra página)
   document.addEventListener("click",function(e){
     if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
@@ -190,10 +192,11 @@
     var href=a.getAttribute("href");if(!href||href.charAt(0)==="#"||/^(mailto:|tel:|https?:|javascript:)/i.test(href))return;
     var u=new URL(a.href,location.href);
     if(u.pathname===location.pathname&&u.search===location.search)return;
-    e.preventDefault();root.classList.add("mo-out");
-    setTimeout(function(){location.href=a.href},260);
+    e.preventDefault();root.classList.remove("pt-in","pt-reveal");root.classList.add("mo-out","pt-out");
+    try{sessionStorage.setItem("pt","1")}catch(_){}
+    setTimeout(function(){location.href=a.href},820);
   });
-  window.addEventListener("pageshow",function(ev){if(ev.persisted){root.classList.remove("mo-out");root.classList.add("mo-in")}});
+  window.addEventListener("pageshow",function(ev){if(ev.persisted){root.classList.remove("mo-out","pt-out","pt-in","pt-reveal");root.classList.add("mo-in")}});
   // Revelação ao rolar
   var SEL=[".section .eyebrow",".section .h2",".sc-head",".nc-head",".tb",".sc-track",".nc-prog",".area-row",".edu-head",".edu-card",".edu-media",".tcard",".fact",".feature",".why .photo",".why-b > *",".how-b > *",".how .stage",".about-b > *",".about .feature",".cards-head",".cards > *",".principle",".values > *",".split > *",".profile .photo",".profile > div > *",".ct-l > *",".ct-r",".nc-bar",".langs",".q blockquote",".band .st",".mission-head",".cta-in > *",".fgrid > *"];
   var els=[];

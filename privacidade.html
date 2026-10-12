@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
-<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("mo")}catch(e){}</script>
+<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches){var d=document.documentElement;d.classList.add("mo");if(sessionStorage.getItem("pt")){d.classList.add("pt-in");sessionStorage.removeItem("pt")}}}catch(e){}</script>
 </head>
 <body data-page="privacidade">
 <header class="top" id="top">
