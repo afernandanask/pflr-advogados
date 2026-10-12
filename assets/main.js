@@ -144,7 +144,7 @@
     var date=v("f-date");if(date){var p=date.split("-");date=p[2]+"/"+p[1]+"/"+p[0]}
     var L=en?["Hello, I would like to book a legal consultation.","Name","Subject","Meeting","Preferred date","Time","Phone","Email","Summary"]:["Olá, gostaria de marcar uma consulta jurídica.","Nome","Assunto","Reunião","Data preferida","Período","Telemóvel","E-mail","Resumo"];
     var lines=[L[0],"",L[1]+": "+v("f-name"),L[2]+": "+selText("f-area"),L[3]+": "+(mode?(en?"Video call":"Videochamada"):(en?"In person":"Presencial")),L[4]+": "+(date||"—"),L[5]+": "+selText("f-time")];
-    if(v("f-phone"))lines.push(L[6]+": "+v("f-phone"));
+    if(v("f-phone")){var cc=document.getElementById("f-cc");lines.push(L[6]+": "+(cc?cc.value+" ":"")+v("f-phone"))}
     if(v("f-email"))lines.push(L[7]+": "+v("f-email"));
     if(v("f-msg"))lines.push("",L[8]+": "+v("f-msg"));
     var txt=lines.join("\n");

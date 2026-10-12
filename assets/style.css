@@ -1147,3 +1147,12 @@ html.lenis,html.lenis body{height:auto}
   .band span{margin-top:0;max-width:15ch;line-height:1.45}
 }
 .tcard:hover h2,.tcard:focus-visible h2{text-decoration:none}
+/* formulário: indicativo do país + rádios na paleta */
+.tel{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);gap:8px}
+.tel select{padding-right:28px;text-overflow:ellipsis}
+.seg input[type=radio]{-webkit-appearance:none;appearance:none;flex:none;width:18px;height:18px;margin:2px 0 0;padding:0;border-radius:50%;border:1.5px solid var(--g500);background:transparent;display:grid;place-items:center;cursor:pointer;transition:border-color .2s}
+.seg input[type=radio]::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--g800);transform:scale(0);transition:transform .2s var(--ease-out)}
+.seg input[type=radio]:checked{border-color:var(--g800)}
+.seg input[type=radio]:checked::before{transform:scale(1)}
+.seg input[type=radio]:focus-visible{outline:2px solid var(--g600);outline-offset:2px}
+.seg label:has(input:checked){background:var(--white);border-color:var(--g800)}
