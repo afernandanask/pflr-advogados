@@ -173,7 +173,7 @@
   var root=document.documentElement;
   if(!root.classList.contains("mo"))return;
   // Scroll suave (rato/trackpad; o toque continua nativo)
-  if(window.Lenis){
+  if(window.Lenis&&!(window.matchMedia&&matchMedia("(hover: none), (pointer: coarse)").matches)){
     try{
       var lenis=new Lenis({duration:1.15,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:true,anchors:{offset:-96}});
       window.__lenis=lenis;
