@@ -300,3 +300,8 @@
   var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){bs.forEach(run);io.disconnect()}},{threshold:.4});
   io.observe(document.querySelector(".band"));
 })();
+
+/* Indicativo: mostra só bandeira + código quando fechado */
+(function(){var s=document.getElementById("f-cc"),v=document.getElementById("f-cc-v");if(!s||!v)return;
+  function up(){var t=s.options[s.selectedIndex].text.split(" ");v.textContent=t[0]+" "+t[1]}
+  s.addEventListener("change",up);up();})();

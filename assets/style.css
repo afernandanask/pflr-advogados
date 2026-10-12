@@ -1156,3 +1156,12 @@ html.lenis,html.lenis body{height:auto}
 .seg input[type=radio]:checked::before{transform:scale(1)}
 .seg input[type=radio]:focus-visible{outline:2px solid var(--g600);outline-offset:2px}
 .seg label:has(input:checked){background:var(--white);border-color:var(--g800)}
+/* selects com seta na paleta do site */
+form select{-webkit-appearance:none;appearance:none;padding-right:40px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%230B1A15' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.75 6 6.25l4.5-4.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px}
+.cc{position:relative}
+.cc select{width:100%;color:transparent;text-shadow:none}
+.cc select option{color:var(--g800)}
+.cc-v{position:absolute;left:14px;right:36px;top:50%;transform:translateY(-50%);pointer-events:none;white-space:nowrap;overflow:hidden;font:400 15px/1.4 var(--body);color:var(--text)}
+@media (max-width:768px){.cc-v{font-size:16px}}
+.cc select:focus-visible{outline:2px solid var(--g600);outline-offset:2px}
+.tel{grid-template-columns:minmax(0,7.5em) minmax(0,1fr)}
