@@ -1254,3 +1254,5 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 .band-v span{margin:0!important;max-width:none!important;font:400 clamp(14px,1.35vw,19px)/1.3 var(--body);letter-spacing:0;text-transform:none;color:rgba(247,248,247,.92)}
 .band-v span::after{content:"";display:block;width:36px;height:1px;margin:12px auto 0;background:rgba(247,248,247,.35)}
 @media (max-width:440px){.band-v .st{padding:4px 6px!important}.band-v span{font-size:13px}}
+/* início: botão do hero alinhado à base da última linha do título */
+@media (min-width:861px){body[data-page="index"] .hx-top{align-items:end}body[data-page="index"] .hx-r{margin-bottom:calc(clamp(44px,5.8vw,88px)*.23)}}
