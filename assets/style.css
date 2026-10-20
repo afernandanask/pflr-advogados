@@ -1274,3 +1274,5 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 .acc .pane p{max-width:none}
 .acc .pane>div{padding-right:56px}
 @media (max-width:600px){.acc .pane>div{padding-right:0}}
+/* início: texto das áreas alinhado ao topo do título */
+@media (min-width:861px){.nc-head{align-items:start}.nc-head p{margin-top:-2px}}
