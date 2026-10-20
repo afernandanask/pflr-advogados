@@ -1256,3 +1256,5 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (max-width:440px){.band-v .st{padding:4px 6px!important}.band-v span{font-size:13px}}
 /* início: botão do hero alinhado à base da última linha do título */
 @media (min-width:861px){body[data-page="index"] .hx-top{align-items:end}body[data-page="index"] .hx-r{margin-bottom:calc(clamp(44px,5.8vw,88px)*.23)}}
+/* início: texto das áreas sem corte */
+.nc-head p{display:block;-webkit-line-clamp:unset;overflow:visible}
