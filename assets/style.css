@@ -1295,5 +1295,5 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 .hx-media.has-video{overflow:hidden}
 .hx-media.has-video::before,.hx-media.has-video::after{display:none}
 .hx-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-/* vídeo do banner: a correção de cor e o céu azul já vêm gravados no arquivo */
-.hx-video{object-position:50% 8%}
+/* vídeo do banner: cor e céu azul gravados no arquivo; versões larga e alta já recortadas */
+.hx-video{object-position:50% 20%}
