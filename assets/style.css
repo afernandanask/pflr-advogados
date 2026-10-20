@@ -1260,7 +1260,7 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 .nc-head p{display:block;-webkit-line-clamp:unset;overflow:visible}
 /* início: honorários em uma coluna na largura toda do bloco */
 .hon-cols{display:grid;gap:16px;margin-top:4px}
-.hon-cols p.d{max-width:none;margin:0}
+.feature .main .hon-cols p.d{max-width:none;margin:0}
 /* equipa / quem acompanha: texto ocupa a coluna inteira */
 .about-b .txt{max-width:none}
 /* remate final: texto e botões limitados à largura do título */
