@@ -1235,3 +1235,22 @@ form select{-webkit-appearance:none;appearance:none;padding-right:40px;backgroun
 .legal-sum dt{font-weight:500;color:var(--g800);font-size:15px}
 .legal-sum dd{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
 @media (max-width:600px){.legal-sum>div{grid-template-columns:1fr;gap:4px}}
+/* botão flutuante do WhatsApp com balão */
+.wa-float{position:fixed;z-index:50;right:40px;bottom:calc(24px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:14px;transition:opacity .3s,transform .3s}
+body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
+.wa-btn{flex:none;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 28px rgba(0,0,0,.28);transition:transform .2s}
+.wa-btn:hover{transform:scale(1.06)}
+.wa-btn svg{width:31px;height:31px}
+.wa-bubble{position:relative;margin:0;max-width:240px;background:#fff;color:var(--g800);font:400 14px/1.4 var(--body);padding:12px 34px 12px 16px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);opacity:0;transform:translateX(8px);pointer-events:none;transition:opacity .35s,transform .35s}
+.wa-bubble::after{content:"";position:absolute;right:-6px;top:50%;margin-top:-6px;border-style:solid;border-width:6px 0 6px 7px;border-color:transparent transparent transparent #fff}
+.wa-bubble a{color:inherit;text-decoration:none}
+.wa-float.show .wa-bubble{opacity:1;transform:none;pointer-events:auto}
+.wa-x{position:absolute;top:6px;right:8px;border:0;background:none;color:var(--muted);font-size:17px;line-height:1;cursor:pointer;padding:2px 4px}
+@media (max-width:600px){.wa-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}.wa-btn{width:52px;height:52px}.wa-btn svg{width:28px;height:28px}.wa-bubble{max-width:200px;font-size:13px}}
+@media (prefers-reduced-motion:reduce){.wa-bubble,.wa-float{transition:none}}
+/* início: barra de autoridade (sem números) */
+.band.band-v{background:var(--g850);color:var(--white)}
+.band-v .st{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:0!important;padding:6px 16px!important}
+.band-v span{margin:0!important;max-width:none!important;font:400 clamp(14px,1.35vw,19px)/1.3 var(--body);letter-spacing:0;text-transform:none;color:rgba(247,248,247,.92)}
+.band-v span::after{content:"";display:block;width:36px;height:1px;margin:12px auto 0;background:rgba(247,248,247,.35)}
+@media (max-width:440px){.band-v .st{padding:4px 6px!important}.band-v span{font-size:13px}}
