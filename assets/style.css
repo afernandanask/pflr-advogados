@@ -1278,3 +1278,16 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (min-width:861px){.nc-head{align-items:start}.nc-head p{margin-top:-2px}}
 /* palavras viúvas: só o ajuste suave do navegador, sem forçar quebras */
 h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
+/* contactos: coluna da esquerda termina à mesma altura do formulário */
+@media (min-width:901px){
+  .ct-grid{align-items:stretch}
+  .ct-l{display:flex;flex-direction:column}
+  .ct-list{grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;gap:26px clamp(32px,4vw,56px)}
+  .ct-follow{margin-top:auto;padding-top:clamp(28px,3vw,40px)}
+}
+@media (min-width:901px){
+  .ct-r{display:flex;flex-direction:column}
+  .ct-r form{flex:1;grid-template-rows:auto auto auto auto 1fr auto}
+  .ct-r .field.full:has(textarea){grid-template-rows:auto 1fr}
+  .ct-r textarea{height:100%}
+}
