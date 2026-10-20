@@ -316,3 +316,8 @@
   try{off=sessionStorage.getItem(k)}catch(e){}
   if(!off)setTimeout(function(){w.classList.add("show")},2500);
   var x=w.querySelector(".wa-x");if(x)x.addEventListener("click",function(){w.classList.remove("show");try{sessionStorage.setItem(k,"1")}catch(e){}});})();
+/* Vídeo do banner: parado para quem prefere menos movimento */
+(function(){var v=document.querySelector(".hx-video");if(!v)return;
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches){v.removeAttribute("autoplay");v.pause();return}
+  function go(){if(v.paused&&!document.hidden){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+  go();v.addEventListener("canplay",go);window.addEventListener("load",go);document.addEventListener("visibilitychange",go);})();
