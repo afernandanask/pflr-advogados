@@ -1264,3 +1264,10 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (max-width:1100px){.hon-cols{grid-template-columns:1fr;gap:14px}}
 /* equipa / quem acompanha: texto ocupa a coluna inteira */
 .about-b .txt{max-width:none}
+/* remate final: texto e botões limitados à largura do título */
+.cta-box{width:fit-content;max-width:100%;margin-inline:auto;display:flex;flex-direction:column;align-items:center}
+.cta-box p,.cta-box .actions{contain:inline-size;width:100%;max-width:none}
+.cta-box .actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:480px){.cta-box .actions{grid-template-columns:1fr}}
+.cta-box h2{max-width:none}
+@media (max-width:480px){.cta-box h2 br{display:none}}
