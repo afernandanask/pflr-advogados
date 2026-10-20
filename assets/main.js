@@ -316,3 +316,23 @@
   try{off=sessionStorage.getItem(k)}catch(e){}
   if(!off)setTimeout(function(){w.classList.add("show")},2500);
   var x=w.querySelector(".wa-x");if(x)x.addEventListener("click",function(){w.classList.remove("show");try{sessionStorage.setItem(k,"1")}catch(e){}});})();
+/* Viúvas: prende as duas últimas palavras de cada texto (complementa o text-wrap:pretty) */
+(function(){
+  var SEL="p,li,dd,dt,h1,h2,h3,h4,.lead,figcaption",NB=" ";
+  function one(el){
+    if(el.textContent.trim().split(/\s+/).length<3)return;
+    var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),ns=[],n;
+    while((n=w.nextNode()))ns.push(n);
+    for(var i=ns.length-1;i>=0;i--){
+      var v=ns[i].nodeValue,t=v.replace(/\s+$/,""),m;
+      if(!t){if(i<ns.length-1)continue;else continue}
+      m=t.search(/\s+\S+$/);
+      if(m>-1){ns[i].nodeValue=t.slice(0,m)+NB+t.slice(m).replace(/^\s+/,"")+v.slice(t.length);return}
+      var j=i-1;while(j>=0&&!ns[j].nodeValue.length)j--;
+      if(j>=0&&/\s$/.test(ns[j].nodeValue)){ns[j].nodeValue=ns[j].nodeValue.replace(/\s+$/,NB);return}
+      return;
+    }
+  }
+  function fix(){document.querySelectorAll(SEL).forEach(one)}
+  fix();document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setTimeout(fix,0)})});
+})();

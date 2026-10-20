@@ -1276,3 +1276,5 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (max-width:600px){.acc .pane>div{padding-right:0}}
 /* início: texto das áreas alinhado ao topo do título */
 @media (min-width:861px){.nc-head{align-items:start}.nc-head p{margin-top:-2px}}
+/* sem palavras viúvas: o navegador equilibra a última linha */
+p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
