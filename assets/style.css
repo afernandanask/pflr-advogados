@@ -1270,3 +1270,7 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (max-width:480px){.cta-box .actions{grid-template-columns:1fr}}
 .cta-box h2{max-width:none}
 @media (max-width:480px){.cta-box h2 br{display:none}}
+/* como funciona: texto das etapas até junto do botão */
+.acc .pane p{max-width:none}
+.acc .pane>div{padding-right:56px}
+@media (max-width:600px){.acc .pane>div{padding-right:0}}
