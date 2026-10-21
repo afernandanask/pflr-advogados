@@ -1308,3 +1308,11 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 @media (max-width:600px){.flogo{display:flex;justify-content:center}.flogo a{display:block;width:min(250px,100%)}.flogo svg{width:100%}}
 /* perfis: cartões com a altura do conteúdo (as colunas equilibram-se) */
 @media (min-width:981px){.edu-card{min-height:0}}
+/* perfis: cartões de formação mais compactos */
+@media (min-width:981px){
+  .edu-card{padding:20px 22px 22px}
+  .edu-card .ico{width:44px;height:44px;padding:10px;margin-bottom:14px}
+  .edu-card p{padding-top:10px}
+  .edu-list{margin-top:12px;padding-top:0;gap:8px}
+  .edu-col{gap:12px}
+}
