@@ -1297,3 +1297,10 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 .hx-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 /* vídeo do banner: cor e céu azul gravados no arquivo; versões larga e alta já recortadas */
 .hx-video{object-position:50% 20%}
+/* início: «Rigor na atuação.» sempre junto (solta só em ecrãs muito estreitos) */
+.nb{white-space:nowrap}
+@media (max-width:340px){.nb{white-space:normal}}
+/* WhatsApp: gradiente verde a deslizar, muito suave */
+.wa-btn{background:linear-gradient(120deg,#25D366 0%,#1FBF5B 30%,#34DF7B 55%,#22C660 80%,#25D366 100%);background-size:260% 260%;animation:wa-flow 9s ease-in-out infinite alternate}
+@keyframes wa-flow{0%{background-position:0% 30%}50%{background-position:100% 70%}100%{background-position:30% 100%}}
+@media (prefers-reduced-motion:reduce){.wa-btn{animation:none}}
