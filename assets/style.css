@@ -1306,3 +1306,5 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 @media (prefers-reduced-motion:reduce){.wa-btn{animation:none}}
 /* rodapé: logótipo centrado no celular */
 @media (max-width:600px){.flogo{display:flex;justify-content:center}.flogo a{display:block;width:min(250px,100%)}.flogo svg{width:100%}}
+/* perfis: cartões com a altura do conteúdo (as colunas equilibram-se) */
+@media (min-width:981px){.edu-card{min-height:0}}
