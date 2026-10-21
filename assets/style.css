@@ -1301,6 +1301,6 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 .nb{white-space:nowrap}
 @media (max-width:340px){.nb{white-space:normal}}
 /* WhatsApp: gradiente verde a deslizar, muito suave */
-.wa-btn{background:linear-gradient(120deg,#25D366 0%,#1FBF5B 30%,#34DF7B 55%,#22C660 80%,#25D366 100%);background-size:260% 260%;animation:wa-flow 9s ease-in-out infinite alternate}
+.wa-btn{background:linear-gradient(120deg,#25D366 0%,#14A84C 28%,#4BEA8E 52%,#128C3F 78%,#25D366 100%);background-size:240% 240%;animation:wa-flow 7s ease-in-out infinite alternate}
 @keyframes wa-flow{0%{background-position:0% 30%}50%{background-position:100% 70%}100%{background-position:30% 100%}}
 @media (prefers-reduced-motion:reduce){.wa-btn{animation:none}}
