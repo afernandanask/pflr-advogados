@@ -1332,3 +1332,4 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 .edu-media .ph-img{object-position:50% 22%}
 @media (max-width:980px){.edu-media .ph-img{object-position:50% 2%}}
 @media (max-width:860px){.why .photo.has-photo{min-height:0;aspect-ratio:4/3}.why .photo.has-photo .ph-img{object-position:50% 72%}}
+.tb-media.has-photo{min-height:0!important;aspect-ratio:4/3;align-self:start}
