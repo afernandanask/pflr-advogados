@@ -1316,3 +1316,16 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
   .edu-list{margin-top:12px;padding-top:0;gap:8px}
   .edu-col{gap:12px}
 }
+
+/* ---- Fotografias reais (substituem o vidro canelado) ---- */
+.has-photo{background:var(--g800)}
+.has-photo::before,.has-photo::after{display:none}
+.ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ph-img[hidden]{display:none}
+.stage.has-photo .lbl span{display:none}
+.feature .side .inner.has-photo{overflow:hidden}
+.tb-media.has-photo .tb-ico{display:none}
+.nc-av.has-photo i{overflow:hidden;background:var(--g800)}
+.nc-av.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.nc-av.has-photo{background:none}
+.stage.has-photo .shade{background:linear-gradient(180deg,rgba(6,15,12,.5),transparent 38%),linear-gradient(0deg,rgba(6,15,12,.6),transparent 45%)}
