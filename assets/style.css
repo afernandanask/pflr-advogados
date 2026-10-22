@@ -1337,3 +1337,7 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 @media (max-width:860px){.feature .side:has(.has-photo){min-height:0;aspect-ratio:1100/1067}}
 .split .photo.has-photo{min-height:0;aspect-ratio:1300/1109;align-self:center}
 .split .photo.has-photo .ph-img{object-position:50% 50%!important}
+@media (min-width:861px){
+  .tb-panel:has(.tb-media.has-photo){grid-template-columns:minmax(0,.9fr) minmax(0,1fr)}
+  .tb-media.has-photo{min-height:0;aspect-ratio:2400/2731;align-self:center}
+}
