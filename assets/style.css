@@ -1249,7 +1249,7 @@ body.at-end .wa-float{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (max-width:600px){.wa-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}.wa-btn{width:52px;height:52px}.wa-btn svg{width:28px;height:28px}.wa-bubble{max-width:200px;font-size:13px}}
 @media (prefers-reduced-motion:reduce){.wa-bubble,.wa-float{transition:none}}
 /* início: barra de autoridade (sem números) */
-.band.band-v{background:var(--g850);color:var(--white)}
+.band.band-v{background:#112921;color:var(--white)}
 .band-v .st{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:0!important;padding:6px 16px!important}
 .band-v span{margin:0!important;max-width:none!important;font:400 clamp(14px,1.35vw,19px)/1.3 var(--body);letter-spacing:0;text-transform:none;color:rgba(247,248,247,.92)}
 .band-v span::after{content:"";display:block;width:36px;height:1px;margin:12px auto 0;background:rgba(247,248,247,.35)}
