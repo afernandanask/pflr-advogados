@@ -1329,3 +1329,5 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 .nc-av.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .nc-av.has-photo{background:none}
 .stage.has-photo .shade{background:linear-gradient(180deg,rgba(6,15,12,.5),transparent 38%),linear-gradient(0deg,rgba(6,15,12,.6),transparent 45%)}
+.edu-media .ph-img{object-position:50% 22%}
+@media (max-width:980px){.edu-media .ph-img{object-position:50% 2%}}
