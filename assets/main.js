@@ -320,6 +320,8 @@
 (function(){var v=document.querySelector(".hx-video");if(!v)return;
   var box=v.parentNode,r=box.offsetWidth/Math.max(1,box.offsetHeight),k=r>=2?"wide":"tall";
   v.poster=v.dataset[k+"Poster"];v.src=v.dataset[k];
-  if(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches){v.removeAttribute("autoplay");v.pause();return}
+  v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");v.setAttribute("playsinline","");
   function go(){if(v.paused&&!document.hidden){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
-  go();v.addEventListener("canplay",go);window.addEventListener("load",go);document.addEventListener("visibilitychange",go);})();
+  go();v.addEventListener("canplay",go);window.addEventListener("load",go);document.addEventListener("visibilitychange",go);
+  /* iPhone em Modo de Pouca Energia: arranca no primeiro toque ou deslize */
+  ["touchstart","touchend","scroll","click"].forEach(function(t){window.addEventListener(t,go,{passive:true})});})();
