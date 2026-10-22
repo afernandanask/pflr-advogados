@@ -1335,3 +1335,5 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 .tb-media.has-photo{min-height:0!important;aspect-ratio:4/3;align-self:start}
 .feature .side .inner.has-photo{inset:0;border-radius:inherit;box-shadow:none}
 @media (max-width:860px){.feature .side:has(.has-photo){min-height:0;aspect-ratio:1100/1067}}
+.split .photo.has-photo{min-height:0;aspect-ratio:1300/1109;align-self:center}
+.split .photo.has-photo .ph-img{object-position:50% 50%!important}
