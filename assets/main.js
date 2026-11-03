@@ -6,11 +6,20 @@
   nodes.forEach(function(n){n.dataset.pt=n.innerHTML});
   var ph=[].slice.call(document.querySelectorAll("[data-i18n-ph]"));
   ph.forEach(function(n){n.dataset.ptph=n.placeholder});
+  /* Inglês também no título da aba, nas descrições das imagens e nas etiquetas de acessibilidade */
+  var AT={"Áreas de atuação":"Practice areas","Anterior":"Previous","Seguinte":"Next","Fechar":"Close","Principal":"Main","Idiomas de trabalho":"Working languages","Indicativo do país":"Country code","PFLR Advogados — página inicial":"PFLR Advogados — home page","Penal":"Criminal","Família":"Family","Migração":"Immigration","Trabalho":"Employment","Societário":"Corporate","Fiscal":"Tax","Sucessões":"Inheritance","Civil":"Civil",
+    "Estátua da Justiça no escritório da PFLR":"Statue of Justice at the PFLR office","Estátua da Justiça no escritório da PFLR, Rua Pascoal de Melo":"Statue of Justice at the PFLR office, Rua Pascoal de Melo","João Portas Fontes e Diogo Lopes Rodrigues em reunião no escritório":"João Portas Fontes and Diogo Lopes Rodrigues in a meeting at the office","João Portas Fontes e Diogo Lopes Rodrigues no escritório da PFLR":"João Portas Fontes and Diogo Lopes Rodrigues at the PFLR office",
+    "Civil · PFLR Advogados":"Civil · PFLR Advogados","Família · PFLR Advogados":"Family · PFLR Advogados","Fiscal · PFLR Advogados":"Tax · PFLR Advogados","Migração · PFLR Advogados":"Immigration · PFLR Advogados","Penal · PFLR Advogados":"Criminal · PFLR Advogados","Societário · PFLR Advogados":"Corporate · PFLR Advogados","Sucessões · PFLR Advogados":"Inheritance · PFLR Advogados","Trabalho · PFLR Advogados":"Employment · PFLR Advogados","Áreas de atuação · PFLR Advogados":"Practice areas · PFLR Advogados","Contactos · PFLR Advogados":"Contact · PFLR Advogados","Equipa · PFLR Advogados":"Team · PFLR Advogados","Política de Privacidade · PFLR Advogados":"Privacy Policy · PFLR Advogados","Sobre nós · PFLR Advogados":"About us · PFLR Advogados"};
+  var atn=[].slice.call(document.querySelectorAll("[alt],[aria-label]")).filter(function(n){return AT[n.getAttribute("alt")]||AT[n.getAttribute("aria-label")]});
+  atn.forEach(function(n){if(n.hasAttribute("alt"))n.dataset.ptAlt=n.getAttribute("alt");if(n.hasAttribute("aria-label"))n.dataset.ptAria=n.getAttribute("aria-label")});
+  var ptTitle=document.title;
   var lang="pt";
   function setLang(l){
     lang=l;document.documentElement.lang=l==="en"?"en":"pt-PT";
     nodes.forEach(function(n){var k=n.dataset.i18n;n.innerHTML=(l==="en"&&EN[k])?EN[k]:n.dataset.pt});
     ph.forEach(function(n){var k=n.dataset.i18nPh;n.placeholder=(l==="en"&&EN[k])?EN[k]:n.dataset.ptph});
+    atn.forEach(function(n){var en=l==="en";if(n.dataset.ptAlt!=null)n.setAttribute("alt",en&&AT[n.dataset.ptAlt]||n.dataset.ptAlt);if(n.dataset.ptAria!=null)n.setAttribute("aria-label",en&&AT[n.dataset.ptAria]||n.dataset.ptAria)});
+    document.title=(l==="en"&&AT[ptTitle])||ptTitle;
     document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.lang===l)});
     try{localStorage.setItem("pflr-lang",l)}catch(e){}
     var dn=document.getElementById("done");if(dn&&!dn.hidden)build();
