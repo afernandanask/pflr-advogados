@@ -1340,3 +1340,9 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
   .tb-panel:has(.tb-media.has-photo){grid-template-columns:minmax(0,.9fr) minmax(0,1fr)}
   .tb-media.has-photo{min-height:0;aspect-ratio:2400/2731;align-self:center}
 }
+/* telemóvel: vídeo do topo maior e barra de autoridade mais fina */
+@media (max-width:860px){
+  .hx-media.has-video{min-height:clamp(320px,48svh,440px)}
+  .band.band-v{padding-block:14px}
+  .band-v span::after{display:none}
+}
