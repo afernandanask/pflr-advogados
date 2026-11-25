@@ -1349,3 +1349,7 @@ h1,h2,h3,h4,p,li,dd,dt,small,figcaption,blockquote,.lead,.txt{text-wrap:pretty}
 /* formulário: campo invisível anti-robô */
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 .form-foot[hidden],.field[hidden],fieldset[hidden]{display:none!important}
+
+/* listas dos selects legíveis no Windows: seções claras usam esquema claro */
+.paper,.light{color-scheme:light}
+select option{background:var(--white);color:var(--g800)}
